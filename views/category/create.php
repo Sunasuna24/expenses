@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>カテゴリーを登録する</h1>
-    <form action="" method="post">
+    <form action="../../app/controller/CategoryController.php" method="post">
         <div>
             <h2>カテゴリー名</h2>
             <input type="text" name="" id="">
