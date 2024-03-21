@@ -12,4 +12,9 @@ class Category
         $this->name = $name;
         $this->slug = $slug;
     }
+
+    public function create()
+    {
+        // 
+    }
 }

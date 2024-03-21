@@ -1,3 +1,16 @@
+<?php
+declare(strict_types=1);
+require_once '../../app/model/Category.php';
+
+if (!empty($_POST)) {
+    if (isset($_POST["name"]) && isset($_POST["slug"])) {
+        $name = $_POST["name"];
+        $slug = $_POST["slug"];
+        $category = new Category($name, $slug);
+        var_dump($category);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -7,14 +20,14 @@
 </head>
 <body>
     <h1>カテゴリーを登録する</h1>
-    <form action="../../app/controller/CategoryController.php" method="post">
+    <form action="" method="post">
         <div>
             <h2>カテゴリー名</h2>
-            <input type="text" name="" id="">
+            <input type="text" name="name">
         </div>
         <div>
             <h2>スラッグ</h2>
-            <input type="text" name="" id="">
+            <input type="text" name="slug">
         </div>
         <div>
             <button type="submit">登録する</button>
