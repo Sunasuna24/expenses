@@ -7,7 +7,8 @@ if (!empty($_POST)) {
         $name = $_POST["name"];
         $slug = $_POST["slug"];
         $category = new Category($name, $slug);
-        var_dump($category);
+
+        $category->create();
     }
 }
 ?>
@@ -23,11 +24,11 @@ if (!empty($_POST)) {
     <form action="" method="post">
         <div>
             <h2>カテゴリー名</h2>
-            <input type="text" name="name">
+            <input type="text" name="name" required>
         </div>
         <div>
             <h2>スラッグ</h2>
-            <input type="text" name="slug">
+            <input type="text" name="slug" required>
         </div>
         <div>
             <button type="submit">登録する</button>

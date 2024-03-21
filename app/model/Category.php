@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+require_once '../../database/pdo.php';
 
 class Category
 {
@@ -13,8 +14,9 @@ class Category
         $this->slug = $slug;
     }
 
-    public function create()
+    public function create(): void
     {
-        // 
+        $pdo = connect();
+        var_dump($pdo);
     }
 }
