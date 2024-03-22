@@ -13,6 +13,16 @@ class Category
         $this->slug = $slug;
     }
 
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getSlug(): string
+    {
+        return $this->slug;
+    }
+
     /**
      * 新しいカテゴリーを新規で追加する
      */
