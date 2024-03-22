@@ -19,6 +19,15 @@ try {
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
+
+if ($_POST) {
+    if (isset($_POST['amount']) && isset($_POST['category_slug'])) {
+        $amount = (int)$_POST['amount'];
+        $category_slug = $_POST['category_slug'];
+        $expense = new Expense($amount, $category_slug);
+        var_dump($expense->create());
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -32,14 +41,14 @@ try {
     <form action="" method="post">
         <div>
             <h2>金額</h2>
-            <input type="number" name="amount">
+            <input type="number" name="amount" min="1" required>
         </div>
         <div>
             <h2>カテゴリー</h2>
             <?php if (1 <= count($categories)): ?>
             <?php foreach ($categories as $category): ?>
             <div>
-                <input type="radio" name="category" value="<?= $category->getSlug(); ?>" id="<?= $category->getSlug(); ?>">
+                <input type="radio" name="category_slug" value="<?= $category->getSlug(); ?>" id="<?= $category->getSlug(); ?>" required>
                 <label for="<?= $category->getSlug(); ?>"><?= $category->getName(); ?></label>
             </div>
             <?php endforeach; ?>

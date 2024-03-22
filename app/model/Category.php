@@ -24,7 +24,7 @@ class Category
     }
 
     /**
-     * 新しいカテゴリーを新規で追加する
+     * 新しいカテゴリーを追加する。
      */
     public function create(): void
     {
