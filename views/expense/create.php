@@ -26,8 +26,8 @@ if ($_POST) {
         $amount = (int)$_POST['amount'];
         $category_slug = $_POST['category_slug'];
         $purpose = $_POST['purpose'];
-        $expense = new Expense($amount, $category_slug);
-        var_dump($expense->create());
+        $expense = new Expense($amount, $category_slug, $purpose);
+        $expense->create();
     }
 }
 ?>

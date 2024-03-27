@@ -31,7 +31,7 @@ class Category
         try {
             $pdo_connection = new PDOConnection();
             $pdo = $pdo_connection->connect();
-    
+
             $statement = $pdo->prepare('INSERT INTO categories(name, slug) VALUES(:name, :slug)');
             $statement->bindValue(':name', $this->name, PDO::PARAM_STR);
             $statement->bindValue(':slug', $this->slug, PDO::PARAM_STR);
