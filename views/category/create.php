@@ -2,7 +2,7 @@
 declare(strict_types=1);
 require_once '../../app/model/Category.php';
 
-if (!empty($_POST)) {
+if ($_POST) {
     if (isset($_POST["name"]) && isset($_POST["slug"])) {
         $name = $_POST["name"];
         $slug = $_POST["slug"];
